@@ -1,0 +1,20 @@
+web:
+    build: .
+    working_dir: /code     
+    command: python manage.py runserver --host 0.0.0.0 --port 5067
+    ports:
+        - "5067:5067"
+    volumes:
+        - .:/code
+    links:
+        - redis
+        - mongodb
+    env_file:
+      - .env
+
+redis:
+    image: redis:2.8.19
+
+mongodb:
+    image: mongo:2.6.7
+
