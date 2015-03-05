@@ -7,6 +7,7 @@ pymongo==2.7.1
 shortuuid==0.4.2
 paste
 gunicorn
+wait==0.0.3
 -e git+https://github.com/colevscode/quickdata.git#egg=quickdata
 -e git+https://github.com/colevscode/quickkvs.git#egg=quickkvs
 -e git+https://github.com/colevscode/gspread.git#egg=gspread
