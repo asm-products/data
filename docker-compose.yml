@@ -1,7 +1,7 @@
 web:
     build: .
     working_dir: /code     
-    command: python manage.py runserver --host 0.0.0.0 --port 5067
+    command: gunicorn --bind="0.0.0.0:5067" --certfile=/tmp/site.crt --keyfile=/tmp/site.key --ssl-version=2 --error-logfile=- --access-logfile=- main:main_app
     ports:
         - "5067:5067"
     volumes:
