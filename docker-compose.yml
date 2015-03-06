@@ -1,7 +1,7 @@
 web:
     build: .
     working_dir: /code     
-    command: gunicorn --bind="0.0.0.0:5067" --certfile=/tmp/site.crt --keyfile=/tmp/site.key --ssl-version=2 --error-logfile=- --access-logfile=- main:main_app
+    command: gunicorn --bind="0.0.0.0:5067" --certfile=/tmp/site.crt --keyfile=/tmp/site.key --ssl-version=2 --error-logfile=- --access-logfile=- --reload main:main_app
     ports:
         - "5067:5067"
     volumes:
