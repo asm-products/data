@@ -10,7 +10,12 @@ web:
         - redis
         - mongodb
     env_file:
-      - .env
+      - docker.env
+    environment:
+      - MONGO_HOST=mongodb:27017
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - PYTHONPATH=/pylib
 
 redis:
     image: redis:2.8.19
