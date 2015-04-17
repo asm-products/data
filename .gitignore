@@ -52,5 +52,6 @@ aliases.json
 dev.env
 sta.env
 pro.env
+docker.env
 
 celerybeat-schedule.db

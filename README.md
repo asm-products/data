@@ -67,6 +67,15 @@ then
     python manage.py runserver
 
 
+### Running on docker
+
+Install docker and docker-compose, copy `docker.env.example` as `docker.env` and update the settings as described in that file. Then run:
+
+    docker-compose up
+
+This will start up three docker containers, one for MongoDB, one for Redis and one for the web app. Once started, the application should be available at the location specified in `SERVICE_URL`. 
+
+
 ### Running on heroku
 
 You will need to install the [heroku toolbelt](https://toolbelt.heroku.com/).

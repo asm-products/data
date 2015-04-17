@@ -1,0 +1,25 @@
+web:
+    build: .
+    working_dir: /code     
+    command: gunicorn --bind="0.0.0.0:5067" --certfile=/tmp/site.crt --keyfile=/tmp/site.key --ssl-version=2 --error-logfile=- --access-logfile=- --reload main:main_app
+    ports:
+        - "5067:5067"
+    volumes:
+        - .:/code
+    links:
+        - redis
+        - mongodb
+    env_file:
+      - docker.env
+    environment:
+      - MONGO_HOST=mongodb:27017
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - PYTHONPATH=/pylib
+
+redis:
+    image: redis:2.8.19
+
+mongodb:
+    image: mongo:2.6.7
+
